@@ -38,12 +38,19 @@
 
 		echo $aluno;*/
 
-		$usuario = new Usuario();
+		//Alterar um usuario
+		/*$usuario = new Usuario();
 
 		$usuario->loadById(6);
 
 		$usuario->update("professor", "!@#$%");
 
+		echo $usuario;*/
+
+		//Delete de um usuario
+		$usuario = new Usuario();
+		$usuario->loadById(6);
+		$usuario->delete();
 		echo $usuario;
 
 	?>
