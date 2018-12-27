@@ -11,21 +11,39 @@
 		require_once("config.php");		
 
 		//carrega um usuario
-		//$root = new Usuario();
-		//$root->loadById(3);
-		//echo $root;
+		/*$root = new Usuario();
+		$root->loadById(3);
+		echo $root;*/
 		
 		//carrega uma lista de usuarios
-		//$lista = Usuario::getList();
-		//echo json_encode($lista);
+		/*$lista = Usuario::getList();
+		echo json_encode($lista);*/
 
 		//carrega uma de lista de usuarios buscando pelo login
-		//$search = Usuario::search("U");
-		//echo json_encode($search);
+		/*$search = Usuario::search("U");
+		echo json_encode($search);*/
 
 		//carrega um usuario usando login e senha
-		$usuario = new Usuario();
+		/*$usuario = new Usuario();
 		$usuario->login("User","12345");
+		echo $usuario;*/
+
+		//Inserindo usuario novo
+		/*$aluno = new Usuario("aluno2", "@lun02");
+
+		$aluno->setDeslogin("aluno");
+		$aluno->setDessenha("@lun0");
+
+		$aluno->insert();
+
+		echo $aluno;*/
+
+		$usuario = new Usuario();
+
+		$usuario->loadById(6);
+
+		$usuario->update("professor", "!@#$%");
+
 		echo $usuario;
 
 	?>
