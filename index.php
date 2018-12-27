@@ -1,17 +1,58 @@
-<?php
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="_css/estilo.css">
+</head>
+<body>
+	<?php
 
-require_once("config.php");
+		require_once("config.php");		
 
-//$sql = new Sql();
+		//carrega um usuario
+		//$root = new Usuario();
+		//$root->loadById(3);
+		//echo $root;
+		
+		//carrega uma lista de usuarios
+		//$lista = Usuario::getList();
+		//echo json_encode($lista);
 
-//$usuarios = $sql->select("SELECT * FROM tb_usuarios");
+		//carrega uma de lista de usuarios buscando pelo login
+		//$search = Usuario::search("U");
+		//echo json_encode($search);
 
-//echo json_encode($usuarios);
+		//carrega um usuario usando login e senha
+		$usuario = new Usuario();
+		$usuario->login("User","12345");
+		echo $usuario;
 
-$root = new Usuario();
+	?>
+	<div class="container">
+		<nav>
+			<ul class="menu">
+				<a href="index.php"><li>Cadastro</li></a>
+				<a href="consultas.php"><li>Consultas</li></a>
+			</ul>
+		</nav>
+		<section>
+			<h1>Cadastro de Usuários</h1>
+			<hr><br><br>
 
-$root->loadById(3);
+			<form method="post" action="carrega.php">
+				<input type="submit" value="Salvar" class="btn">
+				<input type="reset" value="Limpar" class="btn">
+				<br><br>
 
-echo $root;
-
-?>
+				Nome<br>
+				<input type="text" name="nome" class="campo" maxlength="40" required autofocus><br>
+				Email<br>
+				<input type="email" name="Email" class="campo" maxlength="50" required><br>
+				Profissão<br>
+				<input type="text" name="Profissao" class="campo" maxlength="40" required><br>
+			</form>
+		</section>
+	</div>
+</body>
+</html>
